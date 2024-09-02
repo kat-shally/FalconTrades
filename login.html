@@ -1,145 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login/Signup Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #222;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
+<title>Login/Signup</title>
+<style>
+body {
+  font-family: sans-serif;
+  background-color: #222;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 
-        .container {
-            display: flex;
-            gap: 30px;
-        }
+.container {
+  background-color: #111;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 
-        .form-container {
-            background-color: #333;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
 
-        h2 {
-            margin-bottom: 20px;
-        }
+.form-group {
+  margin-bottom: 20px;
+}
 
-        input[type="text"],
-        input[type="email"],
-        input[type="password"],
-        input[type="date"] {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: none;
-            background-color: #444;
-            color: #fff;
-            border-radius: 5px;
-        }
+label {
+  display: block;
+  margin-bottom: 5px;
+}
 
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        input[type="password"]:focus,
-        input[type="date"]:focus {
-            outline: none;
-            background-color: #555;
-        }
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+}
 
-        button {
-            background-color: #ff5733;
-            color: #fff;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+button {
+  background-color: #f00;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-        button:hover {
-            background-color: #e74c3c;
-        }
+.social-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
 
-        .social-login {
-            margin-top: 20px;
-        }
+.social-login a {
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+}
 
-        .social-login button {
-            background-color: #3b5998;
-            color: #fff;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+.social-login img {
+  height: 25px;
+  width: auto;
+}
 
-        .social-login button:hover {
-            background-color: #29487d;
-        }
+.login-signup {
+  text-align: center;
+  margin-top: 20px;
+}
 
-        .forgot-password {
-            margin-top: 10px;
-            font-size: 14px;
-        }
-
-        .forgot-password a {
-            color: #ff5733;
-            text-decoration: none;
-        }
-
-        .forgot-password a:hover {
-            text-decoration: underline;
-        }
-
-        .account-link {
-            margin-top: 20px;
-            font-size: 14px;
-        }
-
-        .account-link a {
-            color: #ff5733;
-            text-decoration: none;
-        }
-
-        .account-link a:hover {
-            text-decoration: underline;
-        }
-
-        .logo {
-            width: 150px;
-            margin-bottom: 20px;
-        }
-    </style>
+.login-signup a {
+  color: #fff;
+  text-decoration: none;
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="form-container">
-            <img src="logo.png" alt="Logo" class="logo">
-            <h2>Login</h2>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
-            <button>Login</button>
-            <div class="social-login">
-                <button>Login with Facebook</button>
-            </div>
-            <div class="forgot-password">
-                <a href="#">Forgot Password?</a>
-            </div>
-            <div class="account-link">
-                Don't have an account? <a href="#">Signup</a>
-            </div>
-        </div>
-        
-        </div>
-    </div>
+<div class="container">
+  <h1>AVANTAGE</h1>
+  <div id="login-form">
+    <form>
+      <div class="form-group">
+        <label for="email">EMAIL</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+        <label for="password">PASSWORD</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+      </div>
+      <button type="submit">LOGIN</button>
+      <div class="social-login">
+        <a href="#">
+          <img src="facebook.png" alt="Facebook">
+        </a>
+      </div>
+      <div class="login-signup">
+        Don't have an account? <a href="#" onclick="showSignupForm()">Signup</a>
+      </div>
+    </form>
+  </div>
+  <div id="signup-form" style="display: none;">
+    <form>
+      <div class="form-group">
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" name="firstname" placeholder="Enter your first name">
+      </div>
+      <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname" placeholder="Enter your last name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+      </div>
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password">
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob">
+      </div>
+      <button type="submit">SIGNUP NOW</button>
+      <div class="login-signup">
+        Already have an account? <a href="#" onclick="showLoginForm()">Login</a>
+      </div>
+    </form>
+  </div>
+</div>
+<script>
+function showSignupForm() {
+  document.getElementById('login-form').style.display = 'none';
+  document.getElementById('signup-form').style.display = 'block';
+}
+
+function showLoginForm() {
+  document.getElementById('signup-form').style.display = 'none';
+  document.getElementById('login-form').style.display = 'block';
+}
+</script>
 </body>
 </html>
