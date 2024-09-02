@@ -1,7 +1,7 @@
 <?php
 
-	$firstName = $_POST['firstName'];
-	$lastName = $_POST['lastName'];
+	$firstName = $_POST['firstname'];
+	$lastName = $_POST['lastname'];
 	$email = $_POST['email'];
 	$password = $_POST['password'];
 
@@ -11,8 +11,8 @@
 		echo "$conn->connect_error";
 		die("Connection Failed : ". $conn->connect_error);
 	} else {
-		$stmt = $conn->prepare("insert into registration(firstName, lastName, email, password) values(?, ?, ?, ?, ?)");
-		$stmt->bind_param("sssssi", $firstName, $lastName, $email, $password);
+		$stmt = $conn->prepare("insert into registration(firstname, lastname, email, password) values(?, ?, ?, ?)");
+		$stmt->bind_param("sssssi", $firstname, $lastname, $email, $password);
 		$execval = $stmt->execute();
 		echo $execval;
 		echo "Registration successfully...";
