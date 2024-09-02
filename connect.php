@@ -1,4 +1,5 @@
 <?php
+
 	$firstName = $_POST['firstName'];
 	$lastName = $_POST['lastName'];
 	$email = $_POST['email'];
@@ -18,4 +19,21 @@
 		$stmt->close();
 		$conn->close();
 	}
+?>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // collect value of input field
+    $data = $_REQUEST['val1'];
+
+    if (empty($data)) {
+        echo "data is empty";
+    } else {
+        echo $data;
+    }
+}
+// Closing the connection.
+$conn->close();
+
 ?>
