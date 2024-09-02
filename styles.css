@@ -13,10 +13,10 @@ header {
 }
 
 .hero {
-    background-image : url("jjj.png);
+    background-image : url("jjj.png");
     background-size: 100% ;
     background-position:100%;
-    height: 500px;
+    height: 800px;
     display: flex;
     justify-content: center;
     align-items: center;
